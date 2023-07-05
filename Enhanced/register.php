@@ -103,6 +103,41 @@
 
 <body>
 
+<?php
+    require('db.php');
+    // When form submitted, insert values into the database.
+    if (isset($_REQUEST['email']) && $email != "" && $password != "" && $firstname != "" && $lastname != "" && $mobileno != "") {
+        $email    = stripslashes($_REQUEST['email']);
+        $email    = mysqli_real_escape_string($con, $email);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        // removes backslashes
+        $firstname = stripslashes($_REQUEST['firstname']);
+        //escapes special characters in a string
+        $firstname = mysqli_real_escape_string($con, $firstname);
+        $lastname = stripslashes($_REQUEST['lastname']);
+        //escapes special characters in a string
+        $lastname = mysqli_real_escape_string($con, $lastname);
+        $mobileno = stripslashes($_REQUEST['mobileno']);
+        $mobileno = mysqli_real_escape_string($con, $mobileno);
+        $create_datetime = date("Y-m-d H:i:s");
+        $query    = "INSERT into `register` (email, password, firstname, lastname, mobileno, create_datetime)
+                     VALUES ('$email', '" . sha1($password) . "', '$firstname', '$lastname', '$mobileno', '$create_datetime')";
+         $result   = mysqli_query($con, $query);}
+    //     if ($result) {
+    //         echo "<div class='form'>
+    //               <h3>You are registered successfully.</h3><br/>
+    //               <p class='link'>Click here to <a href='login.php'>Login</a></p>
+    //               </div>";
+    //     // } else {
+    //     //     echo "<div class='form'>
+    //     //           <h3>Required fields are missing.</h3><br/>
+    //     //           <p class='link'>Click here to <a href='register.php'>registration</a> again.</p>
+    //     //           </div>";
+    //     // }
+    // }} else {
+?>
+
 
     <header class="header">
 
@@ -116,7 +151,7 @@
             <a href="order.html">order</a>
             <a href="review.html">review</a>
             <a href="about.html">about us</a>
-            <a href="myaccount.php">my account</a>
+            <a href="login.php">my account</a>
         </nav>
     
     </header>
@@ -155,19 +190,17 @@
                     <br><br><br> 
                     <button type="submit" value="Register" name="submit" class="register-button">Register<br>
                    
+                    <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?? '' ?>">
         
                 </form>
-                
+                         
                 
 
-                </div>
-
-                
-                
+            </div> 
             </div>
-            <br>
-                <br>
-            <?php  
+            <br><br>
+
+             <?php
                 if(isset($_POST['submit'])) {  
                 if($emailError == "" && $passwordError == "" && $firstnameError == "" && $lastnameError == "" && $mobilenoError == "") {  
                  echo "<h3> <font color=#FFFFFF size='10pt'> <b>You have sucessfully registered.</b></font> </h3>";   
@@ -176,6 +209,16 @@
                 echo "<h3> <font color=#FFFFFF size='10pt'> <b>You didn't filled up the form correctly.</b></font> </h3>";  
                 }  
                 }  
+
+                $token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
+
+                    if (!$token || $token !== $_SESSION['token']) {
+                    // return 405 http status code
+                    header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
+                    exit;
+                    } else {
+                    // process the form
+                    }
             ?> 
             
 
