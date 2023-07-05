@@ -1,6 +1,4 @@
-<?php
-include("session.php");
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,6 +63,7 @@ include("session.php");
                 <textarea id="review" name="review" style="max-width : 450px;" required></textarea></br></br>
 
                 </br></br><button type="submit">Submit</button>
+
             </form>
             </div>  
         </div>
