@@ -1,4 +1,5 @@
-<?php      
+<?php
+	session_start();      
     include('db.php');  
     $email = $_POST['email'];  
     $password = $_POST['password'];  
@@ -15,7 +16,8 @@
         $count = mysqli_num_rows($result);  
           
         if($count == 1){  
-            echo include 'order.php';  
+            echo include 'menu.php';
+			$_SESSION['email'] = $email;
         }  
         else{  
              echo "<h1> Login failed. Please try again!</h1>";  

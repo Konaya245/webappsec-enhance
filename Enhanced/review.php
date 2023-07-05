@@ -14,12 +14,8 @@ session_start();
 <body>
     <header class="header">
 
-        <a href="home.html" class="logo">
-            <img src="images/logo.png">
-        </a>
-    
 <?php include 'header.html';?>
-    
+
     </header>
     
     <section class="review" id="review">

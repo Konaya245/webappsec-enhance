@@ -1,3 +1,5 @@
+<?php
+	session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +13,6 @@
 
 <body>
     <header class="header">
-
-    <a href="home.html" class="logo">
-        <img src="images/logo.png">
-    </a>
 
 <?php include 'header.html';?>
 
