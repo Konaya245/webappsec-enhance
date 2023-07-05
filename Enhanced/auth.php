@@ -19,7 +19,9 @@
         }  
         else{  
              echo "<h1> Login failed. Please try again!</h1>";  
-        
-            } 
+            
+               
+        }
+
         
 ?>  

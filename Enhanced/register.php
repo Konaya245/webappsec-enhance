@@ -70,8 +70,7 @@
                 if (strlen ($mobileno) != 10 && 11) {  
                     $mobilenoError = "Mobile phone number must contain 10/11 digits.";  
                     }  
-            }  
-              
+            }              
         }  
 
         function input_data($data) {
@@ -104,9 +103,10 @@
 <body>
 
 <?php
-    require('db.php');
+    include('db.php');
     // When form submitted, insert values into the database.
-    if (isset($_REQUEST['email']) && $email != "" && $password != "" && $firstname != "" && $lastname != "" && $mobileno != "") {
+    if (isset($_REQUEST['email']) && $email != "" && $password != "" && $firstname != "" && $lastname != "" && $mobileno != "" &&
+    $emailError == "" && $passwordError == "" && $firstnameError == "" && $lastnameError == "" && $mobilenoError == "") {
         $email    = stripslashes($_REQUEST['email']);
         $email    = mysqli_real_escape_string($con, $email);
         $password = stripslashes($_REQUEST['password']);
@@ -118,12 +118,22 @@
         $lastname = stripslashes($_REQUEST['lastname']);
         //escapes special characters in a string
         $lastname = mysqli_real_escape_string($con, $lastname);
+        
         $mobileno = stripslashes($_REQUEST['mobileno']);
         $mobileno = mysqli_real_escape_string($con, $mobileno);
         $create_datetime = date("Y-m-d H:i:s");
         $query    = "INSERT into `register` (email, password, firstname, lastname, mobileno, create_datetime)
                      VALUES ('$email', '" . sha1($password) . "', '$firstname', '$lastname', '$mobileno', '$create_datetime')";
-         $result   = mysqli_query($con, $query);}
+         $result   = mysqli_query($con, $query);
+        
+         $duplicate=mysqli_query($con,"select * from register where email='$email'");
+         if (mysqli_num_rows($duplicate)>0)
+         {
+            echo "<h1> Email already exists.</h1>";  
+         }
+        
+        
+        }
     //     if ($result) {
     //         echo "<div class='form'>
     //               <h3>You are registered successfully.</h3><br/>
@@ -145,14 +155,7 @@
             <img src="images/logo.png">
         </a>
     
-        <nav class="navbar">
-            <a href="home.html">home</a>
-            <a href="menu.html">menu</a>
-            <a href="order.html">order</a>
-            <a href="review.html">review</a>
-            <a href="about.html">about us</a>
-            <a href="login.php">my account</a>
-        </nav>
+<?php include 'header.html';?>
     
     </header>
     <section class="register" id="register">
