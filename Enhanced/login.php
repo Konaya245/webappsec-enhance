@@ -86,8 +86,8 @@ hr {
     <script>  
             function validation()  
             {  
-                var id=document.f1.user.value;  
-                var ps=document.f1.pass.value;  
+                var id=document.f1.email.value;  
+                var ps=document.f1.password.value;  
                 if(id.length=="" && ps.length=="") {  
                     alert("Email and Password fields are empty");  
                     return false;  
