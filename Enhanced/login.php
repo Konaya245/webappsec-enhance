@@ -2,8 +2,9 @@
 	$emailError ="";
     $passwordError ="";
 
-   $email ="";
+    $email ="";
     $password ="";
+    
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {  
       
@@ -28,8 +29,7 @@
                 12 characters in length, but no more than 16.";  
             }  
         } 
-              
-        }  
+
 
         function input_data($data) {
             $data = trim($data);
@@ -37,12 +37,14 @@
             $data = htmlspecialchars($data);
             return $data;
         }
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Review - Chillax Cafe</title>
+    <title>Login - Chillax Cafe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo.png">
@@ -87,7 +89,7 @@ hr {
             <a href="home.html">home</a>
             <a href="menu.html">menu</a>
             <a href="order.html">order</a>
-            <a href="review.html">review</a>
+            <a href="review.php">review</a>
             <a href="about.html">about us</a>
             <a href="login.php">my account</a>
         </nav>
@@ -101,11 +103,11 @@ hr {
 
             <div class="row">
                 <div class="column" style="background-color:#aaa; font-size: 20px">
-                <form name="f1" action = "auth.php" onsubmit = "return validation()" method = "POST">
+                <form name="f1" action = "auth.php" onsubmit = "return validation()" method = "POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <!-- <h1 class="login-title" style="font-size:60px;">Login</h1><br> -->
             <p>  
                 <label> Email: </label>  
-                <input type = "text" id ="email" name  = "email" />  
+                <input type = "email" id ="email" name  = "email" />  
                 <span class="error"> <?php echo $emailError; ?> </span>
             </p>  
             <p>  
@@ -125,6 +127,7 @@ hr {
          </div>
 
     </section>
+
     <script>  
             function validation()  
             {  

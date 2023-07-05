@@ -18,13 +18,8 @@
             echo include 'order.html';  
         }  
         else{  
-            // echo "<h1> Login failed. Please try again!</h1>";  
-            
-                $email = input_data($_POST["email"]);  
-                // check that the e-mail address is well-formed  
-                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  
-                    $emailError = "Invalid email format";  
-                }  
+             echo "<h1> Login failed. Please try again!</h1>";  
+        
             } 
         
 ?>  
