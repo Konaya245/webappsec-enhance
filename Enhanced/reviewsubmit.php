@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   // Validate and sanitize the input here if needed
 
   // Save the review to the database
-  $connection = mysqli_connect("localhost", "root", "", "review");
+  $connection = mysqli_connect("localhost:3307", "root", "", "webappsec");
   if ($connection) {
     $query = "INSERT INTO reviews (name, rating, review) VALUES ('$name', '$rating', '$review')";
     $result = mysqli_query($connection, $query);
