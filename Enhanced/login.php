@@ -42,7 +42,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Review - Chillax Cafe</title>
+    <title>Log In - Chillax Cafe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo.png">
@@ -87,7 +87,7 @@ hr {
             <a href="home.html">home</a>
             <a href="menu.html">menu</a>
             <a href="order.html">order</a>
-            <a href="review.html">review</a>
+            <a href="review.php">review</a>
             <a href="about.html">about us</a>
             <a href="login.php">my account</a>
         </nav>
