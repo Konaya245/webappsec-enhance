@@ -106,10 +106,12 @@ hr {
             <p>  
                 <label> Email: </label>  
                 <input type = "text" id ="email" name  = "email" />  
+                <span class="error"> <?php echo $emailError; ?> </span>
             </p>  
             <p>  
                 <label> Password: </label>  
                 <input type = "password" id ="password" name  = "password" />  
+                <span class="error"> <?php echo $passwordError; ?> </span>
             </p>  
             <p>     
             <button type="submit" value="Register" name="submit" class="register-button">Login<br></button>
