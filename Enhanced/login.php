@@ -1,3 +1,43 @@
+<?php
+	$emailError ="";
+    $passwordError ="";
+
+   $email ="";
+    $password ="";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {  
+      
+         //Email Validation   
+         if (empty($_POST["email"])) {  
+            $emailError = "Email is required";  
+        } else {  
+            $email = input_data($_POST["email"]);  
+            // check that the e-mail address is well-formed  
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  
+                $emailError = "Invalid email format";  
+            }  
+        } 
+
+        if (empty($_POST["password"])) {  
+            $passwordError = "Password is required";  
+        } else {  
+            $password = input_data($_POST["password"]);  
+            // check that the password address is well-formed  
+            if (!preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@?]).{12,16}$/",$password)) {  
+                $passwordError = "Invalid password format (At least one digit, one lowercase character, one uppercase character, one special character, and
+                12 characters in length, but no more than 16.";  
+            }  
+        } 
+              
+        }  
+
+        function input_data($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+?>
 <!DOCTYPE html>
 <html>
 <head>
