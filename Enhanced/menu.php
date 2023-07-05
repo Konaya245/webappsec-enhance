@@ -112,13 +112,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                 <?php } ?>
             </div>
 			</form>
-    
+			
+			<form method="POST">
             <div class="box">
                 <img src="images/samyang.jpg" alt="">
                 <h3>SAMYANG ORIGINAL</h3>
                 <div class="price">RM7.50 </div>
+				<?php if (!isGuest()) { ?>
+                    <input type="hidden" name="product_id" value="1">
+                    <button type="submit">Add to Cart</button>
+                <?php } ?>
             </div>
-
+			</form>
+			
 			<form method="POST">
             <div class="box">
                 <img src="images/samyang-2x.jpg" alt="">
