@@ -61,15 +61,15 @@ hr {
 
             <div class="row">
                 <div class="column" style="background-color:#aaa; font-size: 20px">
-                <form class="form" method="post" name="login">
+                <form name="f1" action = "auth.php" onsubmit = "return validation()" method = "POST">
             <!-- <h1 class="login-title" style="font-size:60px;">Login</h1><br> -->
             <p>  
                 <label> Email: </label>  
-                <input type = "text" id ="user" name  = "user" />  
+                <input type = "text" id ="email" name  = "email" />  
             </p>  
             <p>  
                 <label> Password: </label>  
-                <input type = "password" id ="pass" name  = "pass" />  
+                <input type = "password" id ="password" name  = "password" />  
             </p>  
             <p>     
             <button type="submit" value="Register" name="submit" class="register-button">Login<br></button>
@@ -79,38 +79,31 @@ hr {
 
         <p>Not registered yet? <a href='register.php'>Register Here </a></p>
                 </div>
-                <!-- <div class="column" style="background-color:#bbb; border-left: 10px solid black; text-align: center;">
-                <h2 style="font-size:40px; padding: 100px;">New Customer?</h2><br>
-                    <p>Some text..</p>
-                </div> -->
-            </div>
+             
          </div>
 
-<!--     
-        <div class="box-container">
-            
-        <form class="form" method="post" name="login">
-            <h1 class="login-title">Login</h1>
-            <input type="email" class="login-input" name="email" placeholder="email" autofocus="true"/>
-            <input type="password" class="login-input" name="password" placeholder="Password"/>
-            <input type="submit" value="Login" name="submit" class="login-button"/>
-            <p class="link"><a href="register.php">New Registration</a></p>
-        </form>
-    
-        </div> -->
-        
-        <!-- <div class="float-container">
-
-            <div class="float-child">
-                <div class="green">Float Column 1</div>
-            </div>
-  
-            <div class="float-child">
-                <div class="blue">Float Column 2</div>
-            </div>
-  
-        </div> -->
     </section>
-    
+    <script>  
+            function validation()  
+            {  
+                var id=document.f1.user.value;  
+                var ps=document.f1.pass.value;  
+                if(id.length=="" && ps.length=="") {  
+                    alert("User Name and Password fields are empty");  
+                    return false;  
+                }  
+                else  
+                {  
+                    if(id.length=="") {  
+                        alert("User Name is empty");  
+                        return false;  
+                    }   
+                    if (ps.length=="") {  
+                    alert("Password field is empty");  
+                    return false;  
+                    }  
+                }                             
+            }  
+       </script>  
 </body>
 </html>
