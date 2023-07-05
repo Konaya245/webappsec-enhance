@@ -1,6 +1,12 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $name = $_POST['name'];
+    // if (preg_match("/^[a-zA-Z']+$/", $name)) {
+    //     // Valid input containing only alphabetic characters
+    // } else {
+    //     // Invalid input - contains non-alphabetic characters
+    // }  
   $rating = $_POST['rating'];
   $review = $_POST['review'];
 
