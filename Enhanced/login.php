@@ -72,7 +72,7 @@ hr {
                 <input type = "password" id ="pass" name  = "pass" />  
             </p>  
             <p>     
-                <input type =  "submit" id = "btn" value = "Login" style="font-size: 20px" />  
+            <button type="submit" value="Register" name="submit" class="register-button">Login<br></button>
             </p>  
             
         </form>
