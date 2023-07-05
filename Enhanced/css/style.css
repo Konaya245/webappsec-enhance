@@ -173,12 +173,12 @@ section{
     line-height: 1.8;
 }
 
-label {
+/* label {
     font-size: 1.5rem;
     line-height: 1.8;
     color:#ccc;
     padding:2rem 0;
-}
+} */
 
 .menu .box-container{
     display: grid;
@@ -342,8 +342,8 @@ label {
 }
 
 input[type=text], input[type=number], input[type=password], input[type=email], input[type=tel] {
-    /* width: 100%; */
-    padding: 5px;
+    width: 100%;
+    padding: 10px;
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
@@ -384,6 +384,7 @@ input[type=text], input[type=number], input[type=password], input[type=email], i
 .row {
   display: flex;
 }
+
 
 /* Create two equal columns that sits next to each other */
 .column {

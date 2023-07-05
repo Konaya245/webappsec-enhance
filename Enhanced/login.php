@@ -1,3 +1,43 @@
+<?php
+	$emailError ="";
+    $passwordError ="";
+
+   $email ="";
+    $password ="";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {  
+      
+         //Email Validation   
+         if (empty($_POST["email"])) {  
+            $emailError = "Email is required";  
+        } else {  
+            $email = input_data($_POST["email"]);  
+            // check that the e-mail address is well-formed  
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  
+                $emailError = "Invalid email format";  
+            }  
+        } 
+
+        if (empty($_POST["password"])) {  
+            $passwordError = "Password is required";  
+        } else {  
+            $password = input_data($_POST["password"]);  
+            // check that the password address is well-formed  
+            if (!preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@?]).{12,16}$/",$password)) {  
+                $passwordError = "Invalid password format (At least one digit, one lowercase character, one uppercase character, one special character, and
+                12 characters in length, but no more than 16.";  
+            }  
+        } 
+              
+        }  
+
+        function input_data($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,15 +101,17 @@ hr {
 
             <div class="row">
                 <div class="column" style="background-color:#aaa; font-size: 20px">
-                <form class="form" method="post" name="login">
+                <form name="f1" action = "auth.php" onsubmit = "return validation()" method = "POST">
             <!-- <h1 class="login-title" style="font-size:60px;">Login</h1><br> -->
             <p>  
                 <label> Email: </label>  
-                <input type = "text" id ="user" name  = "user" />  
+                <input type = "text" id ="email" name  = "email" />  
+                <span class="error"> <?php echo $emailError; ?> </span>
             </p>  
             <p>  
                 <label> Password: </label>  
-                <input type = "password" id ="pass" name  = "pass" />  
+                <input type = "password" id ="password" name  = "password" />  
+                <span class="error"> <?php echo $passwordError; ?> </span>
             </p>  
             <p>     
             <button type="submit" value="Register" name="submit" class="register-button">Login<br></button>
@@ -79,38 +121,31 @@ hr {
 
         <p>Not registered yet? <a href='register.php'>Register Here </a></p>
                 </div>
-                <!-- <div class="column" style="background-color:#bbb; border-left: 10px solid black; text-align: center;">
-                <h2 style="font-size:40px; padding: 100px;">New Customer?</h2><br>
-                    <p>Some text..</p>
-                </div> -->
-            </div>
+             
          </div>
 
-<!--     
-        <div class="box-container">
-            
-        <form class="form" method="post" name="login">
-            <h1 class="login-title">Login</h1>
-            <input type="email" class="login-input" name="email" placeholder="email" autofocus="true"/>
-            <input type="password" class="login-input" name="password" placeholder="Password"/>
-            <input type="submit" value="Login" name="submit" class="login-button"/>
-            <p class="link"><a href="register.php">New Registration</a></p>
-        </form>
-    
-        </div> -->
-        
-        <!-- <div class="float-container">
-
-            <div class="float-child">
-                <div class="green">Float Column 1</div>
-            </div>
-  
-            <div class="float-child">
-                <div class="blue">Float Column 2</div>
-            </div>
-  
-        </div> -->
     </section>
-    
+    <script>  
+            function validation()  
+            {  
+                var id=document.f1.email.value;  
+                var ps=document.f1.password.value;  
+                if(id.length=="" && ps.length=="") {  
+                    alert("Email and Password fields are empty");  
+                    return false;  
+                }  
+                else  
+                {  
+                    if(id.length=="") {  
+                        alert("Email is empty");  
+                        return false;  
+                    }   
+                    if (ps.length=="") {  
+                    alert("Password field is empty");  
+                    return false;  
+                    }  
+                }                             
+            }  
+       </script>  
 </body>
 </html>
