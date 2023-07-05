@@ -15,7 +15,7 @@
         $count = mysqli_num_rows($result);  
           
         if($count == 1){  
-            echo include 'order.html';  
+            echo include 'order.php';  
         }  
         else{  
              echo "<h1> Login failed. Please try again!</h1>";  
