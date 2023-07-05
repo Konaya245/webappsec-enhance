@@ -51,11 +51,11 @@ hr {
             <a href="about.html">about us</a>
             <a href="login.php">my account</a>
         </nav>
-    
-    </header>
-    <section class="register" id="register">
+        
+        </header>
+    <section class="login" id="login">
 
-        <h1 class="heading"> new <span>account</span> </h1>
+        <h1 class="heading"> Login </h1>
 
         <div class="float-container">
 
@@ -63,21 +63,21 @@ hr {
                 <div class="column" style="background-color:#aaa; font-size: 20px">
                 <form class="form" method="post" name="login">
             <!-- <h1 class="login-title" style="font-size:60px;">Login</h1><br> -->
-            <hr>
-            <label for="email"><b>Email</b></label>
-            <input type="email" name="email" placeholder="email" autofocus="true"/>
-            <label for="password"><b>Password</b></label>
-            <input type="password" name="password" placeholder="Password"/>
-            <label for="firstname"><b>First Name</b></label>
-            <input type="text" name="firstname" placeholder="First Name" autofocus="true"/>
-            <label for="lastname"><b>Last Name</b></label>
-            <input type="text" name="lastname" placeholder="Last Name"/>
-            <label for="mobilePhone"><b>Mobile Phone No</b></label>
-            <input type="tel" id="mobilePhone" name="mobilePhone" placeholder="Mobile Phone No" title="No alphabet and any special characters" pattern="^[0-9]{10,11}" required>
-            <hr>
-            <input type="submit" value="Register" name="submit" class="register-button"/><br>
+            <p>  
+                <label> Email: </label>  
+                <input type = "text" id ="user" name  = "user" />  
+            </p>  
+            <p>  
+                <label> Password: </label>  
+                <input type = "password" id ="pass" name  = "pass" />  
+            </p>  
+            <p>     
+                <input type =  "submit" id = "btn" value = "Login" style="font-size: 20px" />  
+            </p>  
             
         </form>
+
+        <p>Not registered yet? <a href='register.php'>Register Here </a></p>
                 </div>
                 <!-- <div class="column" style="background-color:#bbb; border-left: 10px solid black; text-align: center;">
                 <h2 style="font-size:40px; padding: 100px;">New Customer?</h2><br>
@@ -86,8 +86,8 @@ hr {
             </div>
          </div>
 
-    
-        <!-- <div class="box-container">
+<!--     
+        <div class="box-container">
             
         <form class="form" method="post" name="login">
             <h1 class="login-title">Login</h1>
