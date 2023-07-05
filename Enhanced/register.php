@@ -145,14 +145,7 @@
             <img src="images/logo.png">
         </a>
     
-        <nav class="navbar">
-            <a href="home.html">home</a>
-            <a href="menu.html">menu</a>
-            <a href="order.html">order</a>
-            <a href="review.html">review</a>
-            <a href="about.html">about us</a>
-            <a href="login.php">my account</a>
-        </nav>
+<?php include 'header.html';?>
     
     </header>
     <section class="register" id="register">
