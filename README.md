@@ -10,6 +10,8 @@ Hamsa
 3. Hani Arinah binti Hairul Azam (2019774)
 4. Hani Nursyamira binti Muhamat Halis (2016478)
 
+## Objectives
+
 ## Enhancement
 1. Add two new pages which are register.php and login.php
     - ### register.php
@@ -28,3 +30,5 @@ Hamsa
 
     - ### login.php
 3. Improve order and review page 
+
+## References
