@@ -2,9 +2,8 @@
 	$emailError ="";
     $passwordError ="";
 
-    $email ="";
+   $email ="";
     $password ="";
-    
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {  
       
@@ -29,7 +28,8 @@
                 12 characters in length, but no more than 16.";  
             }  
         } 
-
+              
+        }  
 
         function input_data($data) {
             $data = trim($data);
@@ -37,14 +37,12 @@
             $data = htmlspecialchars($data);
             return $data;
         }
-    }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login - Chillax Cafe</title>
+    <title>Review - Chillax Cafe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo.png">
@@ -96,7 +94,7 @@ hr {
 
             <div class="row">
                 <div class="column" style="background-color:#aaa; font-size: 20px">
-                <form name="f1" action = "auth.php" onsubmit = "return validation()" method = "POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <form name="f1" action = "auth.php" onsubmit = "return validation()" method = "POST">
             <!-- <h1 class="login-title" style="font-size:60px;">Login</h1><br> -->
             <p>  
                 <label> Email: </label>  
@@ -111,7 +109,6 @@ hr {
             <p>     
             <button type="submit" value="Register" name="submit" class="register-button">Login<br></button>
             </p>  
-            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             
         </form>
 
@@ -121,7 +118,6 @@ hr {
          </div>
 
     </section>
-
     <script>  
             function validation()  
             {  

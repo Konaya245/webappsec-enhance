@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +30,7 @@
             
             <?php
                 // Fetch reviews from the database and display them
-                $connection = mysqli_connect("localhost:3307", "root", "", "webappsec");
+                $connection = mysqli_connect("localhost:3307", "hamsa","webappsec", "webappsec");
                 if ($connection) {
                     $query = "SELECT * FROM reviews";
                     $result = mysqli_query($connection, $query);
