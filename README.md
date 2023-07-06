@@ -60,44 +60,44 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
       |   | In line 23 in the code of auth.php, if there is error, then, "Login failed! Please try again" is displayed |
 
     - ### auth.php
-	| Original  | Enhanced |
-	| ------------- | ------------- |
-	|  - auth.php has not been developed yet | Authn logic file for login.php line 1 - 19|
-	|   | Email passed in session to mark as logged in in line 20	|	 	
-	|   | Cryptographically generated sessionid in line 22 - 27	|
-	|   | Anti-CSRF token generated in line 29 - 38	|
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      |  - auth.php has not been developed yet | Authn logic file for login.php line 1 - 19|
+      |   | Email passed in session to mark as logged in in line 20	|	 	
+      |   | Cryptographically generated sessionid in line 22 - 27	|
+      |   | Anti-CSRF token generated in line 29 - 38	|
 The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication Code), recommended by OWASP, with the secret key located in the .env file.
  
 3. Added functionality to menu, order and review pages
 
     - ### menu.php
-	| Original  | Enhanced |
-	| ------------- | ------------- |
-	|  - only displayed menu item| Add to cart buttons added below menu item e.g. at line 64 - 66|
-	|   | Authorization only logged in can add to cart logic in line 7 - 10	|	 	
-	|   | Passing cart items using session in line 12 - 35	|
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      |  - only displayed menu item| Add to cart buttons added below menu item e.g. at line 64 - 66|
+      |   | Authorization only logged in can add to cart logic in line 7 - 10	|	 	
+      |   | Passing cart items using session in line 12 - 35	|
 
     - ### order.php
-	| Original  | Enhanced |
-	| ------------- | ------------- |
-	|  - only displayed google form to order| Print cart from session loop at line 34 - 41|
-	|   | Total price calculation in line 4 - 10	|	 	
-	|   | CSRF token check to ensure only valid logged in users can finalize transaction in line 49 - 63|
-	|   | Clear cart with unset session in clear_cart.php in line 67 - 69|
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      |  - only displayed google form to order| Print cart from session loop at line 34 - 41|
+      |   | Total price calculation in line 4 - 10	|	 	
+      |   | CSRF token check to ensure only valid logged in users can finalize transaction in line 49 - 63|
+      |   | Clear cart with unset session in clear_cart.php in line 67 - 69|
 
     - ### review.php
-	| Original  | Enhanced |
-	| ------------- | ------------- |
-	|  - only displayed fake reviews| Displays real submitted reviews|
-	|   | |	 	
-	|   | |
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      |  - only displayed fake reviews| Displays real submitted reviews|
+      |   | |	 	
+      |   | |
 
     - ### reviewsubmit.php
-	| Original  | Enhanced |
-	| ------------- | ------------- |
-	|  - reviewsubmit.php did not exist| |
-	|   | |	 	
-	|   | |
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      |  - reviewsubmit.php did not exist| |
+      |   | |	 	
+      |   | |
 
 4. Added session management. session.php file also acts as header file.
 
