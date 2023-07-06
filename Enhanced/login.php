@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+$_SESSION['email'] = '';
+$_SESSION['time'] = time(30);
+?>
+
+<?php
 	$emailError ="";
     $passwordError ="";
 
