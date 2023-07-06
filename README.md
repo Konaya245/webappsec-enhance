@@ -29,6 +29,7 @@ Hamsa
 
 
     - ### login.php
-3. Improve order and review page 
+3. Improve order and review page
+4. Add .htaccess file to disable directory listing
 
 ## References
