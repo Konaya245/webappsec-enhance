@@ -1,6 +1,4 @@
 <?php
-include("session.php")
-?>
 include 'session.php';
 
 // Calculate the total price of items in the cart
