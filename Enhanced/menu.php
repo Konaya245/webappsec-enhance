@@ -1,32 +1,40 @@
 <?php
-session_start();
+include 'session.php';
 
-//placeholder $_SESSION['user_id'] = '1';
+//$_SESSION['email'] = 'ali@gmail.com';  test
 
 // Check if the user is a guest or user
 function isGuest()
 {
-    return !isset($_SESSION['user_id']);
+    return !isset($_SESSION['email']);
 }
 
-// Function to add an item to the cart
-function addToCart($productId)
-{
-    if (!isset($_SESSION['cart'])) {
-        $_SESSION['cart'] = [];
-    }
-    $_SESSION['cart'][] = $productId;
-}
-
-// Handle adding items to the cart
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
-    $productId = $_POST['product_id'];
-    if (!isGuest()) {
-        addToCart($productId);
-    } else {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name']) && isset($_POST['price'])) {
+    // Get the product details from the form
+    $product_name = $_POST['product_name'];
+    $price = $_POST['price'];
+	
+	if (isGuest()) {
         echo "Guest users are not allowed to add items to the cart.";
+        exit; // Stop further execution if the user is a guest
     }
+
+    // Create an array to store the product details
+    $product = array(
+        'product_name' => $product_name,
+        'price' => $price,
+    );
+
+    // Check if the cart exists in the session, create it if it doesn't
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+
+    // Add the product to the cart
+    $_SESSION['cart'][] = $product;
 } ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,13 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
 
 <body>
     <header class="header">
-
-        <a href="home.html" class="logo">
-            <img src="images/logo.png">
-        </a>
-    
-<?php include 'header.html';?>
-    
+<?php include 'header.php';?>
     </header>
     
     <section class="menu" id="menu">
@@ -59,8 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                 <h3>CLASSIC KAYA TOAST</h3>
                 <div class="price">RM2.50</div>
 				<?php if (!isGuest()) { ?>
-                    <input type="hidden" name="product_id" value="1">
-                    <button type="submit">Add to Cart</button>
+                    <input type="hidden" name="product_name" value="CLASSIC KAYA TOAST">
+					<input type="hidden" name="price" value="2.50">
+                    <button type="submit" class="btn">Add to Cart</button>
                 <?php } ?>
             </div>
 			</form>
@@ -71,8 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                 <h3>TUNA CHEESE TOAST</h3>
                 <div class="price">RM4.00</div>
 				<?php if (!isGuest()) { ?>
-                    <input type="hidden" name="product_id" value="1">
-                    <button type="submit">Add to Cart</button>
+                    <input type="hidden" name="product_name" value="TUNA CHEESE TOAST">
+					<input type="hidden" name="price" value="4.00">
+                    <button type="submit" class="btn">Add to Cart</button>
                 <?php } ?>
             </div>
 			</form>
@@ -83,8 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                 <h3>CHEESE TOAST</h3>
                 <div class="price">RM3.00 </div>
 				<?php if (!isGuest()) { ?>
-                    <input type="hidden" name="product_id" value="1">
-                    <button type="submit">Add to Cart</button>
+                    <input type="hidden" name="product_name" value="CHEESE TOAST">
+					<input type="hidden" name="price" value="3.00">
+                    <button type="submit" class="btn">Add to Cart</button>
                 <?php } ?>
             </div>
 			</form>
@@ -95,8 +100,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                 <h3>TUNA TOAST</h3>
                 <div class="price">RM3.00</div>
 				<?php if (!isGuest()) { ?>
-                    <input type="hidden" name="product_id" value="1">
-                    <button type="submit">Add to Cart</button>
+                    <input type="hidden" name="product_name" value="TUNA TOAST">
+					<input type="hidden" name="price" value="3.00">
+                    <button type="submit" class="btn" class="btn">Add to Cart</button>
                 <?php } ?>
             </div>
 			</form>
@@ -107,8 +113,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                 <h3>MAGGI CUP</h3>
                 <div class="price">RM2.50 </div>
 				<?php if (!isGuest()) { ?>
-                    <input type="hidden" name="product_id" value="1">
-                    <button type="submit">Add to Cart</button>
+                    <input type="hidden" name="product_name" value="MAGGI CUP">
+					<input type="hidden" name="price" value="2.50">
+                    <button type="submit" class="btn">Add to Cart</button>
                 <?php } ?>
             </div>
 			</form>
@@ -119,8 +126,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                 <h3>SAMYANG ORIGINAL</h3>
                 <div class="price">RM7.50 </div>
 				<?php if (!isGuest()) { ?>
-                    <input type="hidden" name="product_id" value="1">
-                    <button type="submit">Add to Cart</button>
+                    <input type="hidden" name="product_name" value="SAMYANG ORIGINAL">
+					<input type="hidden" name="price" value="7.50">
+                    <button type="submit" class="btn">Add to Cart</button>
                 <?php } ?>
             </div>
 			</form>
@@ -131,8 +139,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                 <h3>SAMYANG 2X SPICY</h3>
                 <div class="price">RM7.50 </div>
 				<?php if (!isGuest()) { ?>
-                    <input type="hidden" name="product_id" value="1">
-                    <button type="submit">Add to Cart</button>
+                    <input type="hidden" name="product_name" value="SAMYANG 2X SPICY">
+					<input type="hidden" name="price" value="7.50">
+                    <button type="submit" class="btn">Add to Cart</button>
                 <?php } ?>
             </div>
 			</form>
@@ -156,8 +165,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                         <div class="price">RM7.00</div><br>
                     </div>
 					<?php if (!isGuest()) { ?>
-						<input type="hidden" name="product_id" value="1">
-						<button type="submit">Add to Cart</button>
+						<input type="hidden" name="product_name" value="KOPI GANTUNG PERLIS">
+						<input type="hidden" name="price" value="7.00">
+						<button type="submit" class="btn">Add to Cart</button>
 					<?php } ?>
                 </div>
 				</form>
@@ -172,8 +182,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                         <div class="price">RM3.50</div><br>
                     </div>
 					<?php if (!isGuest()) { ?>
-						<input type="hidden" name="product_id" value="1">
-						<button type="submit">Add to Cart</button>
+						<input type="hidden" name="product_name" value="BARBICAN">
+						<input type="hidden" name="price" value="3.50">
+						<button type="submit" class="btn">Add to Cart</button>
 					<?php } ?>
                 </div>
 				</form>
@@ -188,8 +199,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                         <div class="price">RM2.50</div><br>
                     </div>
 					<?php if (!isGuest()) { ?>
-						<input type="hidden" name="product_id" value="1">
-						<button type="submit">Add to Cart</button>
+						<input type="hidden" name="product_name" value="CARBONATED DRINKS">
+						<input type="hidden" name="price" value="2.50">
+						<button type="submit" class="btn">Add to Cart</button>
 					<?php } ?>
                 </div>
 				</form>
@@ -204,8 +216,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                         <div class="price">RM1.50</div><br>
                     </div>
 					<?php if (!isGuest()) { ?>
-						<input type="hidden" name="product_id" value="1">
-						<button type="submit">Add to Cart</button>
+						<input type="hidden" name="product_name" value="BOXED DRINKS">
+						<input type="hidden" name="price" value="RM1.50">
+						<button type="submit" class="btn">Add to Cart</button>
 					<?php } ?>
                 </div>
 				</form>
@@ -220,8 +233,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                         <div class="price">RM2.50</div><br>
                     </div>
 					<?php if (!isGuest()) { ?>
-						<input type="hidden" name="product_id" value="1">
-						<button type="submit">Add to Cart</button>
+						<input type="hidden" name="product_name" value="MILK CARTON">
+						<input type="hidden" name="price" value="RM2.50">
+						<button type="submit" class="btn">Add to Cart</button>
 					<?php } ?>
                 </div>
 				</form>
@@ -243,14 +257,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
                         <div class="price">RM1.50</div><br>
                     </div>
 					<?php if (!isGuest()) { ?>
-						<input type="hidden" name="product_id" value="1">
-						<button type="submit">Add to Cart</button>
+						<input type="hidden" name="product_name" value="AISKRIM MALAYSIA">
+						<input type="hidden" name="price" value="RM1.50">
+						<button type="submit" class="btn">Add to Cart</button>
 					<?php } ?>
                 </div>
 				</form>
             </div>
         </section>
-    
+		
     </section>
 </body>
 </html>

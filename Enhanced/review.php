@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'session.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,12 +14,8 @@ session_start();
 <body>
     <header class="header">
 
-        <a href="home.html" class="logo">
-            <img src="images/logo.png">
-        </a>
-    
-<?php include 'header.html';?>
-    
+<?php include 'header.php';?>
+
     </header>
     
     <section class="review" id="review">
@@ -55,17 +51,18 @@ session_start();
         <div class="box-container">
             <div class="box">
             <form id="review-form" action="reviewsubmit.php" method="post">
-                <label for="name">Name:     </label>
+                <label for="name" class="label1">Name:     </label>
                 <input type="text" id="name" name="name" style="max-width : 450px;" pattern="[a-zA-Z']+" required></br></br>
 
-                <label for="rating">Rating:     </label>
+                <label class="label1" for="rating">Rating:     </label>
                 <input type="number" id="rating" name="rating" min="1" max="5" required></br></br>
 
-                <label for="review">Review: </label></br>
+                <label class="label1" for="review">Review: </label></br>
                 <textarea id="review" name="review" style="max-width : 450px;" required></textarea></br></br>
 
                 </br></br><button type="submit">Submit</button>
 
+                </br></br><button type="submit" class="review-button">Submit</button>
             </form>
             </div>  
         </div>

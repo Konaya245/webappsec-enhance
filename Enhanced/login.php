@@ -6,6 +6,7 @@ $_SESSION['time'] = time(30);
 ?>
 
 <?php
+	include 'session.php';
 	$emailError ="";
     $passwordError ="";
 
@@ -85,12 +86,8 @@ hr {
 
 <body>
     <header class="header">
-
-        <a href="home.html" class="logo">
-            <img src="images/logo.png">
-        </a>
     
-<?php include 'header.html';?>
+<?php include 'header.php';?>
         
         </header>
     <section class="login" id="login">

@@ -1,3 +1,5 @@
+<?php
+	include 'session.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +13,7 @@
 <body>
     <header class="header">
 
-        <a href="home.html" class="logo">
-            <img src="images/logo.png">
-        </a>
-    
-<?php include 'header.html';?>
+<?php include 'header.php';?>
     
     </header>
 

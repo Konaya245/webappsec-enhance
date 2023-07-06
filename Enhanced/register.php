@@ -1,4 +1,5 @@
 <?php
+	include 'session.php';
 	$emailError ="";
     $passwordError ="";
     $firstnameError ="";
@@ -30,7 +31,7 @@
             $password = input_data($_POST["password"]);  
             // check that the password address is well-formed  
             if (!preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@?]).{12,16}$/",$password)) {  
-                $passwordError = "Invalid password format (At least one digit, one lowercase character, one uppercase character, one special character, and
+                $passwordError = "Invalid password format (At least one digit, one lowercase character, one uppercase character, one special character (*.!@?), and
                 12 characters in length, but no more than 16.";  
             }  
         } 
@@ -125,21 +126,20 @@
         $query    = "INSERT into `register` (email, password, firstname, lastname, mobileno, create_datetime)
                      VALUES ('$email', '" . sha1($password) . "', '$firstname', '$lastname', '$mobileno', '$create_datetime')";
          $result   = mysqli_query($con, $query);
-        
-        
-        
-        
+         $duplicate=mysqli_query($con,"select email from register where email='$email'");
+            if (mysqli_num_rows($duplicate)>0)
+            {
+               echo "<h1> Email already exists.</h1>";  
+            }
+            
         }
+        
 ?>
 
 
     <header class="header">
-
-        <a href="home.html" class="logo">
-            <img src="images/logo.png">
-        </a>
-    
-<?php include 'header.html';?>
+   
+<?php include 'header.php';?>
     
     </header>
     <section class="register" id="register">
@@ -160,7 +160,7 @@
                     <span class="error"> <?php echo $emailError; ?> </span>
                     <br><br>
                     <label for="password"><b>Password</b></label>
-                    <input type="password" name="password" placeholder="Password" title="Follow the correct format.">
+                    <input type="password" name="password" placeholder="Password" title="Follow the correct format and only use special characters mentioned above." pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@?]).{12,16}$">
                     <span class="error"> <?php echo $passwordError; ?> </span>
                     <br><br>
                     <label for="firstname"><b>First Name</b></label>
@@ -172,7 +172,7 @@
                     <span class="error"> <?php echo $lastnameError; ?> </span>
                     <br><br>
                     <label for="mobileno"><b>Mobile Phone No</b></label> 
-                    <input type="tel" id="mobileno" name="mobileno" placeholder="Mobile Phone No" title="No alphabet and any special characters. The length is 10/11 digits only">
+                    <input type="tel" id="mobileno" name="mobileno" placeholder="Mobile Phone No" title="No alphabet and any special characters. The length is 10/11 digits only" pattern="^[0-9]{10,11}">
                     <span class="error"> <?php echo $mobilenoError; ?> </span>
                     <br><br><br> 
                     <button type="submit" value="Register" name="submit" class="register-button">Register<br>
@@ -194,12 +194,7 @@
                  echo "<h3> <font color=#FFFFFF size='10pt'> <b>You have sucessfully registered.</b></font> </h3>";   
           
                 } 
-                elseif($duplicate=mysqli_query($con,"select email from register where email='$email'")){
-                    if (mysqli_num_rows($duplicate)>0)
-                    {
-                       echo "<h1> Email already exists.</h1>";  
-                    }
-                }
+                
                 else {  
                     echo "<h3> <font color=#FFFFFF size='10pt'> <b>You didn't filled up the form correctly.</b></font> </h3>";  
                     }
