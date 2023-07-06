@@ -10,15 +10,29 @@ Hamsa
 3. Hani Arinah binti Hairul Azam (2019774)
 4. Hani Nursyamira binti Muhamat Halis (2016478)
 
+## Title
+Chillax Cafe
+
+## Introduction
+Improved version of Chillax Cafe web app with security features added onto the original web technologies class project created by: 
+- ‘Abdul ‘Alim Zuhdi Bin Abdul Nasir
+- Muhammad Zaidi Bin Abdul Razak
+- Mohamad Faris Aiman Bin Mohd Faizal
+- Muhammad Afif Danial Bin Mohd Zuhairi
+- Muhammad Nur ‘Aizat Bin Zuzi
+It is an e-commerce web app for a small coffee shop located in the heart of IIUM Gombak Campus, now no longer existing.
+
+
 ## Objectives
 1. To authenticate and authorize valid user that can place their order through the website.
 2. To prevent unauthorize access by implementing session management.
 3. Implement Regex and input validation to prevent SQL injection and XSS in the text box especially in the login and register page.
 4. File directory cannot be accessed by unauthorize user since it has been disabled.
-5. To create a safer environment for the user to access and use the website.
+5. To prevent CSRF by implementing Anti-CSRF token and secure session management.
+6. To create a safer environment for the user to access and use the website.
 
 ## Enhancement
-1. Add two new pages which are register.php and login.php
+1. Added user authorisation pages which are register.php and login.php and auth.php
     - ### register.php
       | Original  | Enhanced |
       | ------------- | ------------- |
@@ -44,22 +58,70 @@ Hamsa
       |   | There is function validation in line 125-146 which alert the user if no email and password is being inserted.   |
       |   | In line 23 in the code of auth.php, if there is error, then, "Login failed! Please try again" is displayed |
 
-3. Improve order and review page
-4. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
-5. Add session management and authorize user before logging in
+    - ### auth.php
+	| Original  | Enhanced |
+	| ------------- | ------------- |
+	|  - auth.php has not been developed yet | Authn logic file for login.php line 1 - 19|
+	|   | Email passed in session to mark as logged in in line 20	|	 	
+	|   | Cryptographically generated sessionid in line 22 - 27	|
+	|   | Anti-CSRF token generated in line 29 - 38	|
+The token is generated using HMAC (Hash-based Message Authentication Code), recommended by OWASP, with the secret key located in the .env file.
+ 
+3. Added functionality to menu, order and review pages
 
-	- ### session.php
+    - ### menu.php
+	| Original  | Enhanced |
+	| ------------- | ------------- |
+	|  - only displayed menu item| Add to cart buttons added below menu item e.g. at line 64 - 66|
+	|   | Authorization only logged in can add to cart logic in line 7 - 10	|	 	
+	|   | Passing cart items using session in line 12 - 35	|
+
+    - ### order.php
+	| Original  | Enhanced |
+	| ------------- | ------------- |
+	|  - only displayed google form to order| Print cart from session loop at line 34 - 41|
+	|   | Total price calculation in line 4 - 10	|	 	
+	|   | CSRF token check to ensure only valid logged in users can finalize transaction in line 49 - 63|
+	|   | Clear cart with unset session in clear_cart.php in line 67 - 69|
+
+    - ### review.php
+	| Original  | Enhanced |
+	| ------------- | ------------- |
+	|  - only displayed fake reviews| Displays real submitted reviews|
+	|   | |	 	
+	|   | |
+
+    - ### reviewsubmit.php
+	| Original  | Enhanced |
+	| ------------- | ------------- |
+	|  - reviewsubmit.php did not exist| |
+	|   | |	 	
+	|   | |
+
+4. Added session management. session.php file also acts as header file.
+
+    - ### session.php
       | Original  | Enhanced |
       | ------------- | ------------- |
       | - session.php has not been developed yet  | Included in every page to pass session variables and as header|
-	  |   | Absolute session timeout in line 2 in the code  |
-	  |   | Calls session in line 3 |
-	  |   | Included general CSP for all pages in line 5|
+      |   | Absolute session timeout in line 2 in the code  |
+      |   | Calls session in line 3 |
+      |   | Included general CSP for all pages in line 5|
+      |   | Strict-Transport-Security which forces browser to use https in line 6|
+      |   | Prevent MIME sniffing which can translate to XSS attacks in line 7|
+      |   | Same-origin referrer to protect user privacy when making requests to other websites in line 8|
+      |   | XSS filtering and prevent rendering page if attack detected in line 9|
 
-    - ### auth.php
-	| Original  | Enhanced |
-    | ------------- | ------------- |
-	|  - auth.php has not been developed yet | Authn logic file for login.php|	 	
-	|   | Cryptographically generated sessionid in line 22 - 27	|	  
+5. Added logout.php which destroy sessions
+
+6. Included database with db.php with custom username & password
+
+7. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
+
+8. Prevent robots/indexers from crawling certain files and folders with robots.txt	  
 
 ## References
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+https://infosec.mozilla.org/guidelines/web_security
+https://cheatsheetseries.owasp.org/cheatsheets
+Webappsec class handouts from Dr. Muhamad Sadry Abu Seman, DIS, KICT, IIUM
