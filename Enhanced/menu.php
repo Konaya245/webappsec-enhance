@@ -217,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name']) && is
                     </div>
 					<?php if (!isGuest()) { ?>
 						<input type="hidden" name="product_name" value="BOXED DRINKS">
-						<input type="hidden" name="price" value="RM1.50">
+						<input type="hidden" name="price" value="1.50">
 						<button type="submit" class="btn">Add to Cart</button>
 					<?php } ?>
                 </div>
@@ -234,7 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name']) && is
                     </div>
 					<?php if (!isGuest()) { ?>
 						<input type="hidden" name="product_name" value="MILK CARTON">
-						<input type="hidden" name="price" value="RM2.50">
+						<input type="hidden" name="price" value="2.50">
 						<button type="submit" class="btn">Add to Cart</button>
 					<?php } ?>
                 </div>
@@ -258,7 +258,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name']) && is
                     </div>
 					<?php if (!isGuest()) { ?>
 						<input type="hidden" name="product_name" value="AISKRIM MALAYSIA">
-						<input type="hidden" name="price" value="RM1.50">
+						<input type="hidden" name="price" value="1.50">
 						<button type="submit" class="btn">Add to Cart</button>
 					<?php } ?>
                 </div>
