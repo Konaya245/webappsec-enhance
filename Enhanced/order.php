@@ -29,6 +29,7 @@ if (isset($_SESSION['cart'])) {
 	
         <h1 class="heading"> order <span>summary</span> </h1>
 		
+		<!-- loop to print cart items --!>
 		<?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { ?>
             <div class="order-list">
                 <?php foreach ($_SESSION['cart'] as $item) { ?>
@@ -43,8 +44,26 @@ if (isset($_SESSION['cart'])) {
                 <h3>Total: RM<?php echo number_format($totalPrice, 2); ?></h3>
             </div>
 
+			<?php
+			
+		// Retrieve the stored CSRF token from the session
+		$storedCsrfToken = $_SESSION['csrf_token'] ?? '';
 
-			<a href="https://api.whatsapp.com/send?phone=601135221347" class="btn">Send Receipt</a>
+		// Retrieve the submitted CSRF token from the request
+		$submittedCsrfToken = $_POST['csrf_token'] ?? '';
+
+		// Compare the stored and submitted CSRF tokens
+		if (!hash_equals($storedCsrfToken, $submittedCsrfToken)) {
+			// CSRF token mismatch, display an error message
+			$errorMessage = "Invalid CSRF token. Please try again.";
+		} else {
+			// CSRF token is valid, set the href attribute for the link
+			$linkHref = "https://api.whatsapp.com/send?phone=601135221347";
+		}
+		?>
+
+		<a href="<?php echo isset($linkHref) ? $linkHref : '#'; ?>" class="btn"><?php echo isset($errorMessage) ? $errorMessage : 'Send Receipt'; ?></a>
+
 			<form method="POST" action="clear_cart.php">
 			<button type="submit" class="clear-cart-btn">Clear Cart</button>
 			</form>

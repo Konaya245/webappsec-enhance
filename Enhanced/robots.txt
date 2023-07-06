@@ -1,0 +1,4 @@
+# Stop all search engines from crawling private folder and secret file if added
+User-agent: *
+Disallow: /private/
+Disallow: /secret-file.html
