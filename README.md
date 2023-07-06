@@ -66,8 +66,9 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
       |   | Email passed in session to mark as logged in in line 20	|	 	
       |   | Cryptographically generated sessionid in line 22 - 27	|
       |   | Anti-CSRF token generated in line 29 - 38	|
-The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication Code), recommended by OWASP, with the secret key located in the .env file.
- 
+The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication Code), recommended by OWASP, with the secret key located in the .env file.<br><br>
+
+
 3. Added functionality to menu, order and review pages
 
     - ### menu.php
