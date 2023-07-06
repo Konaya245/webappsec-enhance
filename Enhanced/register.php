@@ -126,17 +126,19 @@
         $query    = "INSERT into `register` (email, password, firstname, lastname, mobileno, create_datetime)
                      VALUES ('$email', '" . sha1($password) . "', '$firstname', '$lastname', '$mobileno', '$create_datetime')";
          $result   = mysqli_query($con, $query);
-          
+         $duplicate=mysqli_query($con,"select email from register where email='$email'");
+            if (mysqli_num_rows($duplicate)>0)
+            {
+               echo "<h1> Email already exists.</h1>";  
+            }
+            
         }
+        
 ?>
 
 
     <header class="header">
-
-        <a href="home.html" class="logo">
-            <img src="images/logo.png">
-        </a>
-    
+   
 <?php include 'header.html';?>
     
     </header>
@@ -192,12 +194,7 @@
                  echo "<h3> <font color=#FFFFFF size='10pt'> <b>You have sucessfully registered.</b></font> </h3>";   
           
                 } 
-                elseif($duplicate=mysqli_query($con,"select email from register where email='$email'")){
-                    if (mysqli_num_rows($duplicate)>0)
-                    {
-                       echo "<h1> Email already exists.</h1>";  
-                    }
-                }
+                
                 else {  
                     echo "<h3> <font color=#FFFFFF size='10pt'> <b>You didn't filled up the form correctly.</b></font> </h3>";  
                     }
