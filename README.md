@@ -32,4 +32,18 @@ Hamsa
 3. Improve order and review page
 4. Add .htaccess file to disable directory listing
 
+	- ### session.php
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      | - session.php has not been developed yet  | Included in every page to pass session variables and as header|
+	  |   | Absolute session timeout in line 2 in the code  |
+	  |   | Calls session in line 3 |
+	  |   | Included general CSP for all pages in line 5|
+
+    - ### auth.php
+	| Original  | Enhanced |
+    | ------------- | ------------- |
+	|  - auth.php has not been developed yet | Authn logic file for login.php|	 	
+	|   | Cryptographically generated sessionid in line 22 - 27	|	  
+
 ## References

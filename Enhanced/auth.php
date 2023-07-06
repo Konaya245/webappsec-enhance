@@ -18,6 +18,13 @@
         if($count == 1){  
             echo include 'menu.php';
 			$_SESSION['email'] = $email;
+			
+			// Generate a random session ID
+			$randomBytes = random_bytes(32); // Adjust the byte length as needed
+			$generatedSessionID = bin2hex($randomBytes); // Convert the random bytes to a hexadecimal string
+
+			// Set the session ID
+			session_id($generatedSessionID);
         }  
         else{  
              echo "<h1> Login failed. Please try again!</h1>";  

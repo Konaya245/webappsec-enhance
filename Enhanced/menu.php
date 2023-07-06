@@ -1,7 +1,7 @@
 <?php
 include 'session.php';
 
-//$_SESSION['email'] = 'ali@gmail.com';  test
+//$_SESSION['email'] = 'ali@gmail.com'; 
 
 // Check if the user is a guest or user
 function isGuest()
