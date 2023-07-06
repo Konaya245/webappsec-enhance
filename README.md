@@ -15,13 +15,13 @@ Hamsa
     - ### register.php
       | Original  | Enhanced |
       | ------------- | ------------- |
-      | - Register.php has not been developed yet  | - Add input validation using Regex and create error message in line 1 - 82 in the code  |
-      |   | - Connect with the database in line 106 in the code  |
-      |   | - SQL injection prevention in line 105 - 130 in the code  |
-      |   | - Create registration form and include validate early in line 152 - 179 in the code   |
-      |   | - Improving on the CSP in line 181 & 182 in the code  |
-      |   | - In line 190 - 193 in the code, if there is no error, then, the user is registered  |
-      |   | - Data redundancy prevention in line 194 - 199 in the code  |
+      | - Register.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
+      |   | Connect with the database in line 106 in the code  |
+      |   | SQL injection prevention in line 105 - 130 in the code  |
+      |   | Create registration form and include validate early in line 152 - 179 in the code   |
+      |   | Improving on the CSP in line 181 & 182 in the code  |
+      |   | In line 190 - 193 in the code, if there is no error, then, the user is registered  |
+      |   | Data redundancy prevention in line 194 - 199 in the code  |
 
 
     - ### login.php
