@@ -11,6 +11,11 @@ Hamsa
 4. Hani Nursyamira binti Muhamat Halis (2016478)
 
 ## Objectives
+1. To authenticate and authorize valid user that can place their order through the website.
+2. To prevent unauthorize access by implementing session management.
+3. Implement Regex and input validation to prevent SQL injection and XSS in the text box especially in the login and register page.
+4. File directory cannot be accessed by unauthorize user since it has been disabled.
+5. To create a safer environment for the user to access and use the website.
 
 ## Enhancement
 1. Add two new pages which are register.php and login.php
@@ -29,7 +34,32 @@ Hamsa
 
 
     - ### login.php
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      | - Login.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
+      |   | There is session.php implemented and being included in all pages.  |
+      |   | Connect with the database in line 3 in auth.php where it is being include with db.php  |
+      |   | SQL injection prevention in line 8-11 in the code at auth.php |
+      |   | Create login form and include validate early in line 92-122 in the login.php   |
+      |   | There is function validation in line 125-146 which alert the user if no email and password is being inserted.   |
+      |   | In line 23 in the code of auth.php, if there is error, then, "Login failed! Please try again" is displayed |
+
 3. Improve order and review page
-4. Add .htaccess file to disable directory listing
+4. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
+5. Add session management and authorize user before logging in
+
+	- ### session.php
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      | - session.php has not been developed yet  | Included in every page to pass session variables and as header|
+	  |   | Absolute session timeout in line 2 in the code  |
+	  |   | Calls session in line 3 |
+	  |   | Included general CSP for all pages in line 5|
+
+    - ### auth.php
+	| Original  | Enhanced |
+    | ------------- | ------------- |
+	|  - auth.php has not been developed yet | Authn logic file for login.php|	 	
+	|   | Cryptographically generated sessionid in line 22 - 27	|	  
 
 ## References

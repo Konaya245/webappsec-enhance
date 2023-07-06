@@ -69,9 +69,6 @@ section{
     cursor: pointer;
 }
 
-.btn:hover{
-    letter-spacing: .2rem;
-}
 
 .header{
     background: var(--bg);
@@ -508,6 +505,7 @@ hr {
 .btn:hover {
   background-color: #af8c5e;
   color: #fff;
+  letter-spacing: .2rem;
 }
 
 .order-list {
