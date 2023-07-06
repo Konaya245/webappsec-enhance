@@ -20,6 +20,7 @@ Improved version of Chillax Cafe web app with security features added onto the o
 - Mohamad Faris Aiman Bin Mohd Faizal
 - Muhammad Afif Danial Bin Mohd Zuhairi
 - Muhammad Nur ‘Aizat Bin Zuzi
+
 It is an e-commerce web app for a small coffee shop located in the heart of IIUM Gombak Campus, now no longer existing.
 
 
@@ -65,7 +66,7 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
 	|   | Email passed in session to mark as logged in in line 20	|	 	
 	|   | Cryptographically generated sessionid in line 22 - 27	|
 	|   | Anti-CSRF token generated in line 29 - 38	|
-The token is generated using HMAC (Hash-based Message Authentication Code), recommended by OWASP, with the secret key located in the .env file.
+The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication Code), recommended by OWASP, with the secret key located in the .env file.
  
 3. Added functionality to menu, order and review pages
 
@@ -121,7 +122,7 @@ The token is generated using HMAC (Hash-based Message Authentication Code), reco
 8. Prevent robots/indexers from crawling certain files and folders with robots.txt	  
 
 ## References
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
-https://infosec.mozilla.org/guidelines/web_security
-https://cheatsheetseries.owasp.org/cheatsheets
-Webappsec class handouts from Dr. Muhamad Sadry Abu Seman, DIS, KICT, IIUM
+1. https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+2. https://infosec.mozilla.org/guidelines/web_security
+3. https://cheatsheetseries.owasp.org/cheatsheets
+4. Webappsec class handouts from our course instructor: [Dr. Muhamad Sadry Abu Seman](https://github.com/muhdsadry), DIS, KICT, IIUM
