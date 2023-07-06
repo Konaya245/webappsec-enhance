@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	include 'session.php';
 	$emailError ="";
     $passwordError ="";
 
@@ -80,7 +80,7 @@ hr {
 <body>
     <header class="header">
     
-<?php include 'header.html';?>
+<?php include 'header.php';?>
         
         </header>
     <section class="login" id="login">

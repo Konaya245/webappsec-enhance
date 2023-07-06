@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	include 'session.php';
 	$emailError ="";
     $passwordError ="";
     $firstnameError ="";
@@ -139,7 +139,7 @@
 
     <header class="header">
    
-<?php include 'header.html';?>
+<?php include 'header.php';?>
     
     </header>
     <section class="register" id="register">
