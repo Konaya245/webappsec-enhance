@@ -40,7 +40,8 @@ Hamsa
       |   | In line 23 in the code of auth.php, if there is error, then, "Login failed! Please try again" is displayed |
 
 3. Improve order and review page
-4. Add .htaccess file to disable directory listing
+4. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
+5. Add session management and authorize user before logging in
 
 	- ### session.php
       | Original  | Enhanced |
