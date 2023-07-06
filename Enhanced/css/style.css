@@ -372,6 +372,22 @@ input[type=text], input[type=number], input[type=password], input[type=email], i
     background-color: #ff9800;
   }
 
+  .review-button {
+    background-color: #eedfc9;
+    color: black;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: 2px solid coral;
+    cursor: pointer;
+    width: 10%;
+    opacity: 0.9;
+    font-size: 20px; 
+  }
+  
+  .review-button:hover {
+    background-color: #ff9800;
+  }
+
   .float-container {
     border: 3px solid #fff;
     padding: 20px;
@@ -397,6 +413,13 @@ input[type=text], input[type=number], input[type=password], input[type=email], i
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
+}
+
+.label1 {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color:#ccc;
+    padding:2rem 0;
 }
 
 
