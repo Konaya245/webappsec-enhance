@@ -29,6 +29,16 @@ Hamsa
 
 
     - ### login.php
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      | - Login.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
+      |   | There is session.php implemented and being included in all pages.  |
+      |   | Connect with the database in line 3 in auth.php where it is being include with db.php  |
+      |   | SQL injection prevention in line 8-11 in the code at auth.php |
+      |   | Create login form and include validate early in line 92-122 in the login.php   |
+      |   | There is function validation in line 125-146 which alert the user if no email and password is being inserted.   |
+      |   | In line 23 in the code of auth.php, if there is error, then, "Login failed! Please try again" is displayed |
+
 3. Improve order and review page
 4. Add .htaccess file to disable directory listing
 
