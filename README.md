@@ -11,6 +11,11 @@ Hamsa
 4. Hani Nursyamira binti Muhamat Halis (2016478)
 
 ## Objectives
+1. To authenticate and authorize valid user that can place their order through the website.
+2. To prevent unauthorize access by implementing session management.
+3. Implement Regex and input validation to prevent SQL injection and XSS in the text box especially in the login and register page.
+4. File directory cannot be accessed by unauthorize user since it has been disabled.
+5. To create a safer environment for the user to access and use the website.
 
 ## Enhancement
 1. Add two new pages which are register.php and login.php
