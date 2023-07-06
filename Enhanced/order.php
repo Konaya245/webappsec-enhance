@@ -43,9 +43,8 @@ if (isset($_SESSION['cart'])) {
                 <h3>Total: RM<?php echo number_format($totalPrice, 2); ?></h3>
             </div>
 
-            <form method="POST" action="checkout.php">
-                <button type="submit" class="btn">Proceed to Checkout</button>
-            </form>
+
+			<a href="https://api.whatsapp.com/send?phone=601135221347" class="btn">Send Receipt</a>
 			<form method="POST" action="clear_cart.php">
 			<button type="submit" class="clear-cart-btn">Clear Cart</button>
 			</form>
