@@ -1,5 +1,5 @@
 <?php
-	session_start();      
+	include 'session.php';      
     include('db.php');  
     $email = $_POST['email'];  
     $password = $_POST['password'];  

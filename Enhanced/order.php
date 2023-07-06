@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'session.php';
 
 // Calculate the total price of items in the cart
 $totalPrice = 0.00;
@@ -22,7 +22,7 @@ if (isset($_SESSION['cart'])) {
 
 <body>
     <header class="header">
-<?php include 'header.html';?>
+<?php include 'header.php';?>
     </header>
 
     <section class="order">

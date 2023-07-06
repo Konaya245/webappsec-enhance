@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'session.php';
 
 //$_SESSION['email'] = 'ali@gmail.com';  test
 
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name']) && is
 
 <body>
     <header class="header">
-<?php include 'header.html';?>
+<?php include 'header.php';?>
     </header>
     
     <section class="menu" id="menu">

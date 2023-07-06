@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'session.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@ session_start();
 <body>
     <header class="header">
 
-<?php include 'header.html';?>
+<?php include 'header.php';?>
 
     </header>
     
