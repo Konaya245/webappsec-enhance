@@ -1,27 +1,27 @@
-<h2 align="center">
-INFO 4345 WEB APPLICATION SECURITY <br> <br>
-TITLE: CHILLAX CAFE <br> <br>
-SEM 2 2022/2023 <br> <br>
-GROUP HAMSA <br> <br>
+# webappsec-enhance
+Web Application Security Enhancement Final Assessment Group Project
 
-GROUP MEMBER: <br> <br>
-Mohd Faiz Hafizuddin bin Ahmad Yazi (2011837) <br> <br>
-Muhammad Zaidi bin Abdul Razak (1820833) <br> <br>
-Hani Arinah binti Hairul Azam (2019774)<br> <br>
-Hani Nursyamira binti Muhamat Halis (2016478) <br> <br>
-</h2>
+## Group Name
+Hamsa
 
+## Group Members
+1. Mohd Faiz Hafizuddin bin Ahmad Yazi (2011837)
+2. Muhammad Zaidi bin Abdul Razak (1820833)
+3. Hani Arinah binti Hairul Azam (2019774)
+4. Hani Nursyamira binti Muhamat Halis (2016478)
+
+## Title
+Chillax Cafe
 
 ## Introduction
-Improved version of Chillax Cafe web app with security features added onto the original web technologies (webtech) class project created by: 
+Improved version of Chillax Cafe web app with security features added onto the original web technologies class project created by: 
 - ‘Abdul ‘Alim Zuhdi Bin Abdul Nasir
 - Muhammad Zaidi Bin Abdul Razak
 - Mohamad Faris Aiman Bin Mohd Faizal
 - Muhammad Afif Danial Bin Mohd Zuhairi
 - Muhammad Nur ‘Aizat Bin Zuzi
 
-It is an e-commerce web app for a small coffee shop located in the heart of IIUM Gombak Campus, now no longer existing. <br>
-The original code is only static html web application created just for design as part of their webtech class project. 
+It is an e-commerce web app for a small coffee shop located in the heart of IIUM Gombak Campus, now no longer existing.
 
 
 ## Objectives
