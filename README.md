@@ -87,7 +87,10 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
 
     - ### review.php
       | Original  | Enhanced |
-      | Only a static HTML page | Add php elements to enable the input from user |
+      | ------------- | ------------- |
+      | - Only a static HTML page | Add php elements to enable the input from user |
+      |   | |	 	
+      |   | |
 
     - ### reviewsubmit.php
       | Original  | Enhanced |
@@ -116,7 +119,7 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
 
 7. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
 
-8. Prevent robots/indexers from crawling certain files and folders with robots.txt	  
+8. Prevent robots/indexers from crawling certain files (secret key .env file) and folders with robots.txt	  
 
 ## References
 1. https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
