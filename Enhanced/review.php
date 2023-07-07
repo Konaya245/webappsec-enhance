@@ -53,9 +53,10 @@ include 'session.php';
             <div class="box">
             <form id="review-form" action="reviewsubmit.php" method="post">
                 <label for="name" class="label1">Name:     </label>
-                <input type="text" id="name" name="name" style="max-width: 450px;" pattern="[a-zA-Z']+" required></br></br>
+                <input type="text" id="name" name="name" style="max-width: 450px;" pattern="[a-zA-Z']+" required>
+                </br></br>
 
-                <label class="label1" for="rating">Rating:     </label>
+                <label class="label1" for="rating">Rating ( /5):     </label>
                 <input type="number" id="rating" name="rating" min="1" max="5" style="max-width : 50px;" required></br></br>
 
                 <label class="label1" for="review">Review: </label></br>
