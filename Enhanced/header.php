@@ -4,13 +4,13 @@
     <img src="images/logo.png">
 </a>
 <nav class="navbar">
-    <a href="home.php">home</a>
-    <a href="menu.php">menu</a>
-    <a href="order.php">order</a>
-    <a href="review.php">review</a>
-    <a href="about.php">about us</a>
-    <a href="login.php">my account</a>
-    <a href="logout.php">log out</a>
+    <a href="/home">home</a>
+    <a href="/menu">menu</a>
+    <a href="/order">order</a>
+    <a href="/review">review</a>
+    <a href="/about">about us</a>
+    <a href="/login">my account</a>
+    <a href="/logout">log out</a>
 </nav>
 
 </html>

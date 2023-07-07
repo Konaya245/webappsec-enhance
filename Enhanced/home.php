@@ -24,7 +24,7 @@
         <h3>Welcome to Chillax Cafe</h3>
         <p>Your grab and go station</p>
         <p>now open in IIUM gombak!</p>
-        <a href="menu.php" class="btn">order now</a>
+        <a href="/menu" class="btn">order now</a>
     </div>
 
 </section>

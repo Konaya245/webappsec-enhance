@@ -160,6 +160,8 @@
                     <span class="error"> <?php echo $emailError; ?> </span>
                     <br><br>
                     <label for="password"><b>Password</b></label>
+                    <h3 style="font-size:15px; color:red;">Password format must at least contain one digit, one lowercase character, one uppercase character, one special character (*.!@?), and
+                12 characters in length, but no more than 16</h3>
                     <input type="password" name="password" placeholder="Password" title="Follow the correct format and only use special characters mentioned above." pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@?]).{12,16}$">
                     <span class="error"> <?php echo $passwordError; ?> </span>
                     <br><br>

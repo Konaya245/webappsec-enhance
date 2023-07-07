@@ -95,7 +95,7 @@ hr {
 
             <div class="row">
                 <div class="column" style="background-color:#aaa; font-size: 20px">
-                <form name="f1" action = "auth.php" onsubmit = "return validation()" method = "POST">
+                <form name="f1" action = "/auth" onsubmit = "return validation()" method = "POST">
             <!-- <h1 class="login-title" style="font-size:60px;">Login</h1><br> -->
             <p>  
                 <label> Email: </label>  
@@ -113,7 +113,7 @@ hr {
             
         </form>
 
-        <p>Not registered yet? <a href='register.php'>Register Here </a></p>
+        <p>Not registered yet? <a href='/register'>Register Here </a></p>
                 </div>
              
          </div>
