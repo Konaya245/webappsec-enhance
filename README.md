@@ -121,7 +121,9 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
 
 7. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
 
-8. Prevent robots/indexers from crawling certain files (secret key .env file) and folders with [robots.txt](Enhanced/robots.txt)	  
+8. Prevent robots/indexers from crawling certain files (secret key .env file) and folders with [robots.txt](Enhanced/robots.txt)
+
+9. Shortened the URL is being implemented to prevent any URL rewriting which can lead the attackers to make any changes to the folders. 
 
 ## References
 1. https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
