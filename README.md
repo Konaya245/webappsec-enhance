@@ -33,6 +33,17 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
 5. To prevent CSRF by implementing Anti-CSRF token and secure session management.
 6. To create a safer environment for the user to access and use the website.
 
+## Task Distribution 
+| Enhancement | Assigned |
+| ------------- | ------------- |
+| login | syamira |
+| register | hani |
+| session cart | zaidi |
+| review form| faiz |
+
+Note: Initial task distribution was assigned generally by pages or features to be added, and includes adding the related security features. <br><br>
+Refer to next section for clarification on short form name referred to whom and further detail on the enhancement authors.<br>
+      
 ## Enhancement
 The authors of the file additions/enhancements are encased in square brackets as such: 
 - [faiz] refers to [Mohd Faiz Hafizuddin](https://github.com/faizhaffizudin)
