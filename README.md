@@ -126,6 +126,9 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
 9. Shortened the URL is being implemented by creating .htacces file in htdocs to prevent any URL rewriting which can lead the attackers to make any changes to the folders.
 
     .htaccess file is shown below:
+
+   ![htaccessjpg](https://github.com/Konaya245/webappsec-enhance/assets/121520663/40996b35-1d68-4beb-a2f2-398651181108)
+
    
 
 ## References
