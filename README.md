@@ -36,7 +36,7 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
     - ### [register.php](Enhanced/register.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
-      | - Register.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
+      | Register.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
       |   | XSS prevention in line 1 - 82 in the code  |
       |   | Connect with the database in line 106 in the code  |
       |   | SQL injection prevention in line 105 - 130 in the code  |
@@ -50,7 +50,7 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
     - ### [login.php](Enhanced/login.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
-      | - Login.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
+      | Login.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
       |   | There is session.php implemented and being included in all pages.  |
       |   | Connect with the database in line 3 in auth.php where it is being include with db.php  |
       |   | SQL injection prevention in line 8-11 in the code at auth.php |
@@ -61,7 +61,7 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
     - ### [auth.php](Enhanced/auth.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
-      |  - auth.php has not been developed yet | Authn logic file for login.php line 1 - 19|
+      | auth.php has not been developed yet | Authn logic file for login.php line 1 - 19|
       |   | Email passed in session to mark as logged in in line 20	|	 	
       |   | Cryptographically generated sessionid in line 22 - 27	|
       |   | Anti-CSRF token generated in line 29 - 38	|
@@ -72,14 +72,14 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
     - ### [menu.php](Enhanced/menu.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
-      |  - only displayed menu item| Add to cart buttons added below menu item e.g. at line 64 - 66|
+      | Only displays menu item | Add to cart buttons added below menu item e.g. at line 64 - 66|
       |   | Authorization only logged in can add to cart logic in line 7 - 10	|	 	
       |   | Passing cart items using session in line 12 - 35	|
 
     - ### [order.php](Enhanced/order.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
-      |  - only displayed google form to order| Print cart from session loop at line 34 - 41|
+      | Only displays Google Forms to order | Print cart from session loop at line 34 - 41|
       |   | Total price calculation in line 4 - 10	|	 	
       |   | CSRF token check to ensure only valid logged in users can finalize transaction in line 49 - 63|
       |   | Clear cart with unset session in clear_cart.php in line 67 - 69|
@@ -87,14 +87,14 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
     - ### [review.php](Enhanced/review.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
-      | - Only a static HTML page | Add forms to enable the user to submit their review |
+      | Only displays a static HTML page | Add forms to enable the user to submit their review |
       |  The review from user is hardcoded | The review submitted from user is automatically published |	 	
       |   | Implement regex to sanitize the input |
 
     - [reviewsubmit.php](Enhanced/reviewsubmit.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
-      |  - reviewsubmit.php did not exist| Add reviewsubmit.php to sanitize the input from users |
+      | reviewsubmit.php did not exist| Add reviewsubmit.php to sanitize the input from users |
       |   | Implement input sanitization from server side|	 	
       |   | Submit review to database with regex |
 
@@ -103,7 +103,7 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
     - ### [session.php](Enhanced/session.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
-      | - session.php has not been developed yet  | Included in every page to pass session variables and as header|
+      | session.php has not been developed yet  | Included in every page to pass session variables and as header|
       |   | Absolute session timeout in line 2 in the code  |
       |   | Calls session in line 3 |
       |   | Included general CSP for all pages in line 5|
