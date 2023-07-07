@@ -1,5 +1,5 @@
-# webappsec-enhance
-Web Application Security Enhancement Final Assessment Group Project
+# INFO 43445 Web Application Security 
+# Web Application Security Enhancement Final Assessment Group Project
 
 ## Group Name
 Hamsa
@@ -67,16 +67,6 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
       |   | Cryptographically generated sessionid in line 22 - 27	|
       |   | Anti-CSRF token generated in line 29 - 38	|
 The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication Code), recommended by OWASP, with the secret key located in the .env file.<br><br>
-3. Improve order page
-4. Enhance review page
-
-  - ### review.php
-      | Original  | Enhanced |
-      | Only a static HTML page | Add php elements to enable the input from user |
-
-5. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
-6. Add session management and authorize user before logging in
-
 
 3. Added functionality to menu, order and review pages
 
@@ -97,10 +87,7 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
 
     - ### review.php
       | Original  | Enhanced |
-      | ------------- | ------------- |
-      |  - only displayed fake reviews| Displays real submitted reviews|
-      |   | |	 	
-      |   | |
+      | Only a static HTML page | Add php elements to enable the input from user |
 
     - ### reviewsubmit.php
       | Original  | Enhanced |
