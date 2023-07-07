@@ -88,11 +88,16 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
     - ### [review.php](Enhanced/review.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
-      | - Only a static HTML page | Add php elements to enable the input from user |
-      |   | |	 	
-      |   | |
+      | - Only a static HTML page | Add forms to enable the user to submit their review |
+      |  The review from user is hardcoded | The review submitted from user is automatically published |	 	
+      |   | Implement regex to sanitize the input |
 
-    - [reviewsubmit.php](Enhanced/reviewsubmit.php) submits review to database with regex
+    - [reviewsubmit.php](Enhanced/reviewsubmit.php)
+      | Original  | Enhanced |
+      | ------------- | ------------- |
+      |  - reviewsubmit.php did not exist| Add reviewsubmit.php to sanitize the input from users |
+      |   | Implement input sanitization from server side|	 	
+      |   | Submit review to database with regex |
 
 4. Added session management. session.php file also acts as header file.
 
