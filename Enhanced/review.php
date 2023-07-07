@@ -51,7 +51,7 @@ include 'session.php';
         <h1 class="heading"> submit <span>review</span> </h1>   
         <div class="box-container">
             <div class="box">
-            <form id="review-form" action="reviewsubmit.php" method="post">
+            <form id="review-form" action="/reviewsubmit" method="post">
                 <label for="name" class="label1">Name:     </label>
                 <input type="text" id="name" name="name" style="max-width: 450px;" pattern="[a-zA-Z']+" required></br></br>
 
@@ -62,7 +62,11 @@ include 'session.php';
                 <input type="text" id="review" name="review" style="max-width: 100%;" pattern="[a-zA-Z0-9\s!\&?,.]*" required></br></br>
                 <!-- <textarea id="review" name="review" style="max-width : 450px;" required></textarea></br></br> -->
 
+<<<<<<< Updated upstream
                 </br></br><button onclick="Validate()" class="review-button">Submit</button>
+=======
+                <!-- </br></br><button type="submit">Submit</button> -->
+>>>>>>> Stashed changes
 
                 <!-- <script>
                     var usernamecheck = /^[A-Za-z0-9]{5,1000}\.[A-Za-z0-9]{5,1000}$/;

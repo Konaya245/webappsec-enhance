@@ -64,7 +64,7 @@ if (isset($_SESSION['cart'])) {
 
 		<a href="<?php echo isset($linkHref) ? $linkHref : '#'; ?>" class="btn"><?php echo isset($errorMessage) ? $errorMessage : 'Send Receipt'; ?></a>
 
-			<form method="POST" action="clear_cart.php">
+			<form method="POST" action="/clear_cart">
 			<button type="submit" class="clear-cart-btn">Clear Cart</button>
 			</form>
 			

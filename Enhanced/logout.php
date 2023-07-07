@@ -4,7 +4,7 @@ session_start();
 if(session_destroy())
 {
 // Redirecting To Home Page
-header("Location: login.php");
+header("Location: /login");
 exit();
 }
 // Initialize the session
@@ -17,6 +17,6 @@ $_SESSION = array();
 session_destroy();
  
 // Redirect to home page
-header("location: home.php");
+header("location: /home");
 exit;
 ?>
