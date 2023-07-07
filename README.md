@@ -27,7 +27,7 @@ The original code is only static html web application created just for design as
 ## Objectives
 1. To authenticate and authorize valid user that can place their order through the website.
 2. To prevent unauthorize access by implementing session management.
-3. Implement Regex and input validation to prevent SQL injection and XSS in the text box especially in the login and register page.
+3. To implement Regex and input validation to prevent SQL injection and XSS in the text box especially in the login and register page.
 4. File directory cannot be accessed by unauthorize user since it has been disabled.
 5. To prevent CSRF by implementing Anti-CSRF token and secure session management.
 6. To create a safer environment for the user to access and use the website.
@@ -67,6 +67,15 @@ The original code is only static html web application created just for design as
       |   | Cryptographically generated sessionid in line 22 - 27	|
       |   | Anti-CSRF token generated in line 29 - 38	|
 The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication Code), recommended by OWASP, with the secret key located in the .env file.<br><br>
+3. Improve order page
+4. Enhance review page
+
+  - ### review.php
+      | Original  | Enhanced |
+      | Only a static HTML page | Add php elements to enable the input from user |
+
+5. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
+6. Add session management and authorize user before logging in
 
 
 3. Added functionality to menu, order and review pages
