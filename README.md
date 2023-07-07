@@ -15,11 +15,10 @@ Chillax Cafe
 
 ## Introduction
 Improved version of Chillax Cafe web app with security features added onto the original web technologies class project created by: 
-- ‘Abdul ‘Alim Zuhdi Bin Abdul Nasir
-- Muhammad Zaidi Bin Abdul Razak
-- Mohamad Faris Aiman Bin Mohd Faizal
-- Muhammad Afif Danial Bin Mohd Zuhairi
-- Muhammad Nur ‘Aizat Bin Zuzi
+- Mohd Faiz Hafizuddin bin Ahmad Yazi
+- Muhammad Zaidi bin Abdul Razak
+- Hani Arinah binti Hairul Azam
+- Hani Nursyamira binti Muhamat Halis
 
 It is an e-commerce web app for a small coffee shop located in the heart of IIUM Gombak Campus, now no longer existing.
 
