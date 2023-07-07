@@ -1,4 +1,3 @@
-# INFO 43445 Web Application Security 
 # Web Application Security Enhancement Final Assessment Group Project
 
 ## Group Name
