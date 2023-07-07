@@ -34,8 +34,14 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
 6. To create a safer environment for the user to access and use the website.
 
 ## Enhancement
+The authors of the file additions/enhancements are encased in square brackets as such: 
+- [faiz] refers to [Mohd Faiz Hafizuddin](https://github.com/faizhaffizudin)
+- [zaidi] refers to [Muhammad Zaidi](https://github.com/Konaya245)
+- [hani] refers to [Hani Arinah](https://github.com/HaniHairul)
+- [syamira] refers to [Hani Nursyamira](https://github.com/hanisyamira)
+
 1. Added user authorisation pages which are register.php and login.php and auth.php
-    - ### [register.php](Enhanced/register.php)
+    - ### [register.php](Enhanced/register.php) [hani]
       | Original  | Enhanced |
       | ------------- | ------------- |
       | Register.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
@@ -49,7 +55,7 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
       |   | Data redundancy prevention in line 194 - 199 in the code  |
 
 
-    - ### [login.php](Enhanced/login.php)
+    - ### [login.php](Enhanced/login.php) [syamira]
       | Original  | Enhanced |
       | ------------- | ------------- |
       | Login.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
@@ -60,25 +66,25 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
       |   | There is function validation in line 125-146 which alert the user if no email and password is being inserted.   |
       |   | In line 23 in the code of auth.php, if there is error, then, "Login failed! Please try again" is displayed |
 
-    - ### [auth.php](Enhanced/auth.php)
+    - ### [auth.php](Enhanced/auth.php) [syamira] 
       | Original  | Enhanced |
       | ------------- | ------------- |
       | auth.php has not been developed yet | Authn logic file for login.php line 1 - 19|
-      |   | Email passed in session to mark as logged in in line 20	|	 	
-      |   | Cryptographically generated sessionid in line 22 - 27	|
-      |   | Anti-CSRF token generated in line 29 - 38	|
+      |   | Email passed in session to mark as logged in in line 20	[zaidi]|	 	
+      |   | Cryptographically generated sessionid in line 22 - 27 [zaidi]|
+      |   | Anti-CSRF token generated in line 29 - 38	[zaidi]|
 The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication Code), recommended by OWASP, with the secret key located in the .env file.<br><br>
 
 3. Added functionality to menu, order and review pages
 
-    - ### [menu.php](Enhanced/menu.php)
+    - ### [menu.php](Enhanced/menu.php) [zaidi]
       | Original  | Enhanced |
       | ------------- | ------------- |
       | Only displays menu item | Add to cart buttons added below menu item e.g. at line 64 - 66|
       |   | Authorization only logged in can add to cart logic in line 7 - 10	|	 	
       |   | Passing cart items using session in line 12 - 35	|
 
-    - ### [order.php](Enhanced/order.php)
+    - ### [order.php](Enhanced/order.php) [zaidi]
       | Original  | Enhanced |
       | ------------- | ------------- |
       | Only displays Google Forms to order | Print cart from session loop at line 34 - 41|
@@ -86,7 +92,7 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
       |   | CSRF token check to ensure only valid logged in users can finalize transaction in line 49 - 63|
       |   | Clear cart with unset session in clear_cart.php in line 67 - 69|
 
-    - ### [review.php](Enhanced/review.php)
+    - ### [review.php](Enhanced/review.php) [faiz]
       | Original  | Enhanced |
       | ------------- | ------------- |
       | Only displays a static HTML page | Add forms to enable the user to submit their review by asking their name, rating and review details|
@@ -94,7 +100,7 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
       |   | Displays the reviews by the users |	 	
       |   | Implement regex to sanitize the input |
 
-    - [reviewsubmit.php](Enhanced/reviewsubmit.php)
+    - ### [reviewsubmit.php](Enhanced/reviewsubmit.php) [faiz]
       | Original  | Enhanced |
       | ------------- | ------------- |
       | reviewsubmit.php did not exist| Add reviewsubmit.php to sanitize the input from users |
@@ -103,7 +109,7 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
 
 4. Added session management. session.php file also acts as header file.
 
-    - ### [session.php](Enhanced/session.php)
+    - ### [session.php](Enhanced/session.php) [zaidi]
       | Original  | Enhanced |
       | ------------- | ------------- |
       | session.php has not been developed yet  | Included in every page to pass session variables and as header|
@@ -115,15 +121,15 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
       |   | Same-origin referrer to protect user privacy when making requests to other websites in line 8|
       |   | XSS filtering and prevent rendering page if attack detected in line 9|
 
-5. Added [logout.php](Enhanced/logout.php) which destroy sessions
+5. Added [logout.php](Enhanced/logout.php) which destroy sessions [zaidi]
 
-6. Included database with [db.php](Enhanced/db.php) with custom username & password
+6. Included database with [db.php](Enhanced/db.php) with custom username & password [hani]
 
-7. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
+7. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI) [hani][syamira]  
 
-8. Prevent robots/indexers from crawling certain files (secret key .env file) and folders with [robots.txt](Enhanced/robots.txt)
+8. Prevent robots/indexers from crawling certain files (secret key .env file) and folders with [robots.txt](Enhanced/robots.txt) [zaidi]
 
-9. Shortened the URL is being implemented by creating .htacces file in htdocs to prevent any URL rewriting which can lead the attackers to make any changes to the folders.
+9. Shortened the URL is being implemented by creating .htacces file in htdocs to prevent any URL rewriting which can lead the attackers to make any changes to the folders. [hani][syamira] 
 
     .htaccess file is shown below:
 
