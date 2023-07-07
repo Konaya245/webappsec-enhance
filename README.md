@@ -34,7 +34,7 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
 
 ## Enhancement
 1. Added user authorisation pages which are register.php and login.php and auth.php
-    - ### register.php
+    - ### [register.php](Enhanced/register.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
       | - Register.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
@@ -48,7 +48,7 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
       |   | Data redundancy prevention in line 194 - 199 in the code  |
 
 
-    - ### login.php
+    - ### [login.php](Enhanced/login.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
       | - Login.php has not been developed yet  | Add input validation using Regex and create error message in line 1 - 82 in the code  |
@@ -59,7 +59,7 @@ It is an e-commerce web app for a small coffee shop located in the heart of IIUM
       |   | There is function validation in line 125-146 which alert the user if no email and password is being inserted.   |
       |   | In line 23 in the code of auth.php, if there is error, then, "Login failed! Please try again" is displayed |
 
-    - ### auth.php
+    - ### [auth.php](Enhanced/auth.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
       |  - auth.php has not been developed yet | Authn logic file for login.php line 1 - 19|
@@ -70,14 +70,14 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
 
 3. Added functionality to menu, order and review pages
 
-    - ### menu.php
+    - ### [menu.php](Enhanced/menu.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
       |  - only displayed menu item| Add to cart buttons added below menu item e.g. at line 64 - 66|
       |   | Authorization only logged in can add to cart logic in line 7 - 10	|	 	
       |   | Passing cart items using session in line 12 - 35	|
 
-    - ### order.php
+    - ### [order.php](Enhanced/order.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
       |  - only displayed google form to order| Print cart from session loop at line 34 - 41|
@@ -85,14 +85,14 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
       |   | CSRF token check to ensure only valid logged in users can finalize transaction in line 49 - 63|
       |   | Clear cart with unset session in clear_cart.php in line 67 - 69|
 
-    - ### review.php
+    - ### [review.php](Enhanced/review.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
       | - Only a static HTML page | Add php elements to enable the input from user |
       |   | |	 	
       |   | |
 
-    - ### reviewsubmit.php
+    - ### [reviewsubmit.php](Enhanced/reviewsubmit.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
       |  - reviewsubmit.php did not exist| |
@@ -101,7 +101,7 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
 
 4. Added session management. session.php file also acts as header file.
 
-    - ### session.php
+    - ### [session.php](Enhanced/session.php)
       | Original  | Enhanced |
       | ------------- | ------------- |
       | - session.php has not been developed yet  | Included in every page to pass session variables and as header|
@@ -113,13 +113,13 @@ The Anti-CSRF token is generated using HMAC (Hash-based Message Authentication C
       |   | Same-origin referrer to protect user privacy when making requests to other websites in line 8|
       |   | XSS filtering and prevent rendering page if attack detected in line 9|
 
-5. Added logout.php which destroy sessions
+5. Added [logout.php](Enhanced/logout.php) which destroy sessions
 
-6. Included database with db.php with custom username & password
+6. Included database with [db.php](Enhanced/db.php) with custom username & password
 
 7. Disable file directory by removing 'Indexes' in httpd.conf (Options ~~Indexes~~ FollowSymLinks Includes ExecCGI)
 
-8. Prevent robots/indexers from crawling certain files (secret key .env file) and folders with robots.txt	  
+8. Prevent robots/indexers from crawling certain files (secret key .env file) and folders with [robots.txt](Enhanced/robots.txt)	  
 
 ## References
 1. https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
