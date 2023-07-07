@@ -26,7 +26,8 @@ include 'session.php';
             
             <?php
                 // Fetch reviews from the database and display them
-                $connection = mysqli_connect("localhost:3307", "hamsa","webappsec", "webappsec");
+                $connection = mysqli_connect("localhost", "root","", "review");
+                // $connection = mysqli_connect("localhost:3307", "hamsa","webappsec", "webappsec");
                 if ($connection) {
                     $query = "SELECT * FROM reviews";
                     $result = mysqli_query($connection, $query);
@@ -36,7 +37,7 @@ include 'session.php';
                     echo "<h3>From: " . $row['name'] . "</h3>";
                     echo "<p>on " . $row['time'] . "</p><hr>";
                     echo "<p><b>Rating:</b> " . $row['rating'] . "/5</p>";
-                    echo "<p><b>Review:</b> " . $row['review'] . "</p>";
+                    echo "<p style='word-wrap: break-word; word-break: break-all;'><b>Review:</b> " . $row['review'] . "</p>";
                     echo "</div>";
                     }
 
@@ -52,18 +53,39 @@ include 'session.php';
             <div class="box">
             <form id="review-form" action="reviewsubmit.php" method="post">
                 <label for="name" class="label1">Name:     </label>
-                <input type="text" id="name" name="name" style="max-width : 450px;" pattern="[a-zA-Z']+" required></br></br>
+                <input type="text" id="name" name="name" style="max-width: 450px;" pattern="[a-zA-Z']+" required></br></br>
 
                 <label class="label1" for="rating">Rating:     </label>
-                <input type="number" id="rating" name="rating" min="1" max="5" required></br></br>
+                <input type="number" id="rating" name="rating" min="1" max="5" style="max-width : 50px;" required></br></br>
 
                 <label class="label1" for="review">Review: </label></br>
-                <textarea id="review" name="review" style="max-width : 450px;" required></textarea></br></br>
+                <input type="text" id="review" name="review" style="max-width: 100%;" pattern="[a-zA-Z0-9\s!\&?,.]*" required></br></br>
+                <!-- <textarea id="review" name="review" style="max-width : 450px;" required></textarea></br></br> -->
 
-                </br></br><button type="submit">Submit</button>
+                </br></br><button onclick="Validate()" class="review-button">Submit</button>
 
-                </br></br><button type="submit" class="review-button">Submit</button>
-            </form>
+                <!-- <script>
+                    var usernamecheck = /^[A-Za-z0-9]{5,1000}\.[A-Za-z0-9]{5,1000}$/;
+
+                    function Validate()
+                    {
+                        var val = document.getElementById('review').value;
+                        var lines = val.split('\n');
+
+                        for(var i = 0; i < lines.length; i++)
+                        {
+                        if(!lines[i].match(usernamecheck))
+                        {
+                            alert ('Invalid input: ' + lines[i] + '.  Please write the usernames in the correct format (with a full stop between first and last name).');
+                            return false;
+                        } 
+                        }
+
+                        window.alert('Everything looks good!');
+                    }
+                </script> -->
+
+                </form>
             </div>  
         </div>
         <!-- <div class="box">
