@@ -63,11 +63,9 @@ include 'session.php';
                 <input type="text" id="review" name="review" style="max-width: 100%;" pattern="[a-zA-Z0-9\s!\&?,.]*" required></br></br>
                 <!-- <textarea id="review" name="review" style="max-width : 450px;" required></textarea></br></br> -->
 
-<<<<<<< Updated upstream
+
                 </br></br><button onclick="Validate()" class="review-button">Submit</button>
-=======
-                <!-- </br></br><button type="submit">Submit</button> -->
->>>>>>> Stashed changes
+
 
                 <!-- <script>
                     var usernamecheck = /^[A-Za-z0-9]{5,1000}\.[A-Za-z0-9]{5,1000}$/;
